@@ -1,0 +1,5 @@
+$ touch logs.txt
+
+$ docker run -d --rm -v $(pwd)/logs.txt:/usr/app/logs.txt devopsdockeruh/first_volume_exercise
+9694cce58efd7d0a98ca0ae98bfb5c0de9f862818bb645dbe63fda1d986762f4
+

@@ -1,0 +1,20 @@
+Secret message is: "Docker is easy"
+
+$ docker run -d --rm --name 1.4 devopsdockeruh/exec_bash_exercise
+22c93f4c8dc4b0ce7c9d8a071266beabf94d18d251dbcea488c26ff6130020bd
+
+$ docker exec -it 1.4 bash
+root@22c93f4c8dc4:/usr/app# tail -f ./logs.txt
+Mon, 27 Jul 2020 09:48:59 GMT
+Mon, 27 Jul 2020 09:49:02 GMT
+Mon, 27 Jul 2020 09:49:05 GMT
+Mon, 27 Jul 2020 09:49:08 GMT
+Secret message is:
+"Docker is easy"
+Mon, 27 Jul 2020 09:49:14 GMT
+Mon, 27 Jul 2020 09:49:17 GMT
+Mon, 27 Jul 2020 09:49:20 GMT
+Mon, 27 Jul 2020 09:49:23 GMT
+^C
+root@22c93f4c8dc4:/usr/app# exit
+exit
