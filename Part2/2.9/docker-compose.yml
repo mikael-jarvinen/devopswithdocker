@@ -1,0 +1,26 @@
+version: '3.5'
+
+services:
+  db:
+    image: postgres
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=example-backend
+      - POSTGRES_PASSWORD=secret
+    volumes:
+      - ./database:/var/lib/postgresql/data
+  backend:
+    build: ../../Part1/1.11
+    ports:
+      - 8000:8000
+    environment:
+      - DB_USERNAME=example-backend
+      - DB_PASSWORD=secret
+      - DB_HOST=db
+      - FRONT_URL=http://localhost:5000
+  frontend:
+    build: ../../Part1/1.10
+    ports:
+      - 5000:5000
+    environment:
+      - API_URL=http://localhost:8000
